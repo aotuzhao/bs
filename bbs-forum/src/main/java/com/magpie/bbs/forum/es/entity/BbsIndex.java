@@ -6,7 +6,12 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.io.Serializable;
 import java.util.Date;
-
+/**
+ *
+ * @Description: BbsIndex
+ * @date: 2019/4/16 21:23
+ * @author：zhaoxuezhao
+ */
 @Document(indexName="bbs",type="content")
 public class BbsIndex implements Serializable{
 

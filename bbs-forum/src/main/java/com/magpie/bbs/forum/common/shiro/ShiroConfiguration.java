@@ -9,9 +9,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author pierce
- * @date 2019/4/10 18:15
- * @description:
+ *
+ * @Description: ShiroConfiguration
+ * @date: 2019/4/16 21:35
+ * @author：zhaoxuezhao
  */
 @Configuration
 public class ShiroConfiguration {

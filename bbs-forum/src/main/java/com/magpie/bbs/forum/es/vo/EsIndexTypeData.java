@@ -4,15 +4,25 @@ import com.magpie.bbs.forum.es.annotation.EsEntityType;
 import com.magpie.bbs.forum.es.annotation.EsOperateType;
 
 /**
- * EsIndexType注解的数据
- * @author yangkebiao
  *
+ * @Description: EsIndexType注解的数据
+ * @date: 2019/4/16 21:18
+ * @author：zhaoxuezhao
  */
 public class EsIndexTypeData {
 
-	private EsEntityType entityType;					//实体类型
-	private EsOperateType operateType;			//操作类型
-	private Object id;									//获取主键
+	/**
+	 * 实体类型
+	 */
+	private EsEntityType entityType;
+	/**
+	 * 操作类型
+	 */
+	private EsOperateType operateType;
+	/**
+	 * 获取主键
+	 */
+	private Object id;
 	
 	public EsEntityType getEntityType() {
 		return entityType;

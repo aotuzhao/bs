@@ -6,8 +6,10 @@ import com.magpie.bbs.forum.model.BbsUser;
 import java.util.Date;
 
 /**
- * 索引对象
-*
+ *
+ * @Description: 索引对象模型
+ * @date: 2019/4/16 21:17
+ * @author：zhaoxuezhao
  */
 public class IndexObject implements Comparable<IndexObject>{
 	

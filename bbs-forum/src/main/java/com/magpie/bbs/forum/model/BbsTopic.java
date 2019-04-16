@@ -5,10 +5,12 @@ import org.beetl.sql.core.TailBean;
 import java.io.Serializable;
 import java.util.Date;
 
-/*
-* 
-* gen by beetlsql 2016-06-13
-*/
+/**
+ *
+ * @Description: 话题对象模型
+ * @date: 2019/4/16 21:10
+ * @author：zhaoxuezhao
+ */
 public class BbsTopic  extends TailBean implements Serializable{
 	private static final long serialVersionUID = -2086183299152059973L;
 	

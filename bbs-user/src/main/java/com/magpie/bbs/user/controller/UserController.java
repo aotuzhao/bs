@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author pierce
- * @date 2019/4/15 10:25
- * @description:
+ *
+ * @Description: 用户信息管理
+ * @date: 2019/4/16 21:27
+ * @author：zhaoxuezhao
  */
 @RestController
 public class UserController {

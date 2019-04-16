@@ -6,10 +6,12 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-/*
-* 
-* gen by beetlsql 2016-06-13
-*/
+/**
+ *
+ * @Description: 帖子对象模型
+ * @date: 2019/4/16 17:35
+ * @author：zhaoxuezhao
+ */
 public class BbsPost  extends TailBean implements Serializable{
 	private static final long serialVersionUID = 2365496820528154205L;
 	

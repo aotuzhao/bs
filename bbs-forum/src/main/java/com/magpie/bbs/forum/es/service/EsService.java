@@ -30,7 +30,12 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+/**
+ *
+ * @Description: EsService
+ * @date: 2019/4/16 21:20
+ * @author：zhaoxuezhao
+ */
 @Service
 public class EsService{
 

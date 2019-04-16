@@ -13,9 +13,9 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * @author pierce
+ * @author zhaoxuezhao
  * @date 2019/4/10 18:01
- * @description:
+ * @description: 自定义realm
  */
 public class ShiroRealm extends AuthorizingRealm {
 

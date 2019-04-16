@@ -1,8 +1,10 @@
 package com.magpie.bbs.user.model;
 
-/*
+/**
  *
- * gen by beetlsql 2016-04-27
+ * @Description: 用户对象模型
+ * @date: 2019/4/16 21:26
+ * @author：zhaoxuezhao
  */
 public class BbsUser {
 

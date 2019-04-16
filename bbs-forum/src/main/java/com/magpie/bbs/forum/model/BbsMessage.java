@@ -1,9 +1,10 @@
 package com.magpie.bbs.forum.model;
-
-/*
-* 
-* gen by beetlsql 2016-12-27
-*/
+/**
+ *
+ * @Description: 消息对象模型
+ * @date: 2019/4/16 17:35
+ * @author：zhaoxuezhao
+ */
 public class BbsMessage  {
 	private Integer id ;
 	private Integer status ;

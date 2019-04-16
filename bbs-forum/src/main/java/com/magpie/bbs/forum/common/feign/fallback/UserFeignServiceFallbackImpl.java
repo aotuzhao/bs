@@ -8,9 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
- * @author pierce
- * @date 2019/4/10 17:29
- * @description:
+ *
+ * @Description: feign熔断降价
+ * @date: 2019/4/16 21:32
+ * @author：zhaoxuezhao
  */
 @Component
 public class UserFeignServiceFallbackImpl implements FeignUserService {

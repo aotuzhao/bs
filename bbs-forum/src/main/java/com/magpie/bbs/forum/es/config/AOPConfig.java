@@ -23,7 +23,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.lang.reflect.Method;
 import java.util.*;
-
+/**
+ *
+ * @Description: es切面配置
+ * @date: 2019/4/16 21:24
+ * @author：zhaoxuezhao
+ */
 @Configuration
 @Aspect
 public class AOPConfig {

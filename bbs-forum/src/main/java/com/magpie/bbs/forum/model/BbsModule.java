@@ -1,9 +1,11 @@
 package com.magpie.bbs.forum.model;
 
-/*
-* 
-* gen by beetlsql 2016-06-13
-*/
+/**
+ *
+ * @Description: 版块对象模型
+ * @date: 2019/4/16 17:35
+ * @author：zhaoxuezhao
+ */
 public class BbsModule  {
 	private Integer id ;
 	private Integer turn ;

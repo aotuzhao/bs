@@ -1,11 +1,11 @@
 package com.magpie.bbs.forum.es.annotation;
 
 import java.lang.annotation.*;
-
 /**
- * 创建索引的注解
- * @author yangkebiao
  *
+ * @Description: 创建索引的注解
+ * @date: 2019/4/16 21:23
+ * @author：zhaoxuezhao
  */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

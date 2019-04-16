@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @date 2019/4/4 14:15
- * @description:
+ * @description: 用户信息管理
  */
 @Mapper
 public interface UserMapper {
