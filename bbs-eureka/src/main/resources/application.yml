@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: bbs-eureka-${server.port}
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://127.0.0.1:7211/eureka/
+  server:
+    enable-self-preservation: false #关闭自我保护机制
+    eviction-interval-timer-in-ms: 4000 #清理间隔
+server:
+  port: 7211

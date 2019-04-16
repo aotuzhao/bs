@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.magpie.bbs.forum.mapper.UserMapper">
+
+    <!-- 获取用户列表-->
+    <select id="getUserList" parameterType="com.magpie.bbs.forum.model.BbsUser" resultType="com.magpie.bbs.forum.model.BbsUser">
+        <include refid="getUserListSql" />
+        LIMIT ${currentPage}, ${pageSize}
+    </select>
+
+    <!-- 统计用户列表-->
+    <select id="countUser" parameterType="com.magpie.bbs.forum.model.BbsUser" resultType="int">
+        select count(1) from (<include refid="getUserListSql" />) count
+    </select>
+
+    <!-- 修改用户信息-->
+    <update id="updateUser" parameterType="com.magpie.bbs.forum.model.BbsUser">
+        update bbs_user bu set bu.status = #{status} where bu.id = #{id}
+    </update>
+
+    <sql id="getUserListSql">
+        SELECT
+            bu.id id,
+            IFNULL(bu.user_name, '') userName,
+            IFNULL(bu.email, '') email,
+            IFNULL(bu.score, '') score,
+            IFNULL(bu.level, '') level,
+            IFNULL(bu.balance, '') balance,
+            IFNULL(bu.corp, '') corp,
+            IFNULL(bu.sex, '') sex,
+            CASE bu.sex
+                WHEN 0 THEN '女'
+                ELSE '男'
+            END sexName,
+            bu.status status
+        FROM
+            bbs_user bu
+        WHERE
+            bu. STATUS != - 1
+            <if test="sex != null and sex != '' || sex == 0">
+                and bu.sex = #{sex}
+            </if>
+    </sql>
+</mapper>

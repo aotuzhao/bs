@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bbs-eureka/bbs-eureka.iml" filepath="$PROJECT_DIR$/bbs-eureka/bbs-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-forum/bbs-forum.iml" filepath="$PROJECT_DIR$/bbs-forum/bbs-forum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-user/bbs-user.iml" filepath="$PROJECT_DIR$/bbs-user/bbs-user.iml" />
+    </modules>
+  </component>
+</project>
