@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="bbs-config" />
         <module name="bbs-eureka" />
         <module name="bbs-forum" />
         <module name="bbs-user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="bbs-config" target="1.8" />
       <module name="bbs-eureka" target="1.8" />
       <module name="bbs-forum" target="1.8" />
       <module name="bbs-user" target="1.8" />
@@ -19,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bbs-config" options="-parameters" />
       <module name="bbs-eureka" options="-parameters" />
       <module name="bbs-forum" options="-parameters" />
       <module name="bbs-user" options="-parameters" />
