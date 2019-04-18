@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/bbs-forum/pom.xml" />
         <option value="$PROJECT_DIR$/bbs-user/pom.xml" />
         <option value="$PROJECT_DIR$/bbs-config/pom.xml" />
+        <option value="$PROJECT_DIR$/bbs-eureka-slave/pom.xml" />
+        <option value="$PROJECT_DIR$/bb-config-slave/pom.xml" />
       </list>
     </option>
   </component>

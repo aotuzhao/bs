@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/bb-config-slave/bb-config-slave.iml" filepath="$PROJECT_DIR$/bb-config-slave/bb-config-slave.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbs-config/bbs-config.iml" filepath="$PROJECT_DIR$/bbs-config/bbs-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbs-eureka/bbs-eureka.iml" filepath="$PROJECT_DIR$/bbs-eureka/bbs-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-eureka-slave/bbs-eureka-slave.iml" filepath="$PROJECT_DIR$/bbs-eureka-slave/bbs-eureka-slave.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbs-forum/bbs-forum.iml" filepath="$PROJECT_DIR$/bbs-forum/bbs-forum.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbs-user/bbs-user.iml" filepath="$PROJECT_DIR$/bbs-user/bbs-user.iml" />
     </modules>

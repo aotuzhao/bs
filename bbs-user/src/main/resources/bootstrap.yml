@@ -1,0 +1,18 @@
+server:
+  port: 7310
+  servlet:
+    context-path: /bbs
+spring:
+  application:
+    name: user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      profile: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:7211/eureka/
+#,http://eureka2:7212/eureka/

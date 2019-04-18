@@ -5,12 +5,7 @@ server:
 
 spring:
   application:
-    name: bbs-forum
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/bbs?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false&autoReconnect=true
-    username: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: forum
   session:
     store-type: HASH_MAP
   cache:
@@ -18,19 +13,13 @@ spring:
   data:
     elasticsearch:
       cluster-nodes: 192.168.135.128:9300
-  mvc:
-    static-path-pattern: /**
+
   resources:
     static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
   servlet:
     multipart:
       max-file-size: 500MB
       max-request-size: 1000MB
-  redis:
-    database: 0
-    host: 192.168.135.128
-    password:
-    port: 6379
 
 
 elasticsearch:
@@ -64,21 +53,8 @@ hystrix:
 
 eureka:
   client:
-    registerWithEureka: true
-    fetchRegistry: false
     service-url:
-      defaultZone: http://127.0.0.1:7211/eureka/
-  server:
-    enable-self-preservation: false #关闭自我保护机制
-    eviction-interval-timer-in-ms: 4000 #清理间隔
-  instance:
-    prefer-ip-address: true
-    metadata-map:
-      management:
-        context-path: /bbs
-    health-check-url: http://localhost:${server.port}/bbs/actuator/health
-    status-page-url: http://localhost:${server.port}/bbs/actuator/info
-    home-page-url: http://localhost:${server.port}/
+      defaultZone: http://eureka1:7211/eureka/,http://eureka2:7212/eureka/
 
 ribbon.eureka.enabled: false
 bbs-user.ribbon.listOfServers: http://localhost:7310

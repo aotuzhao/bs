@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date 2019/4/10 14:14
  * @description:
  */
-@FeignClient(name="bbs-user", path = "/bbs", fallbackFactory = UserFeignServiceFallbackFactory.class)
+@FeignClient(name="user", path = "/bbs", fallbackFactory = UserFeignServiceFallbackFactory.class)
 public interface FeignUserService {
 
     @RequestMapping(value = "/bbs/user/list")
