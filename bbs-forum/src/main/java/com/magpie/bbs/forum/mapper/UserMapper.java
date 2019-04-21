@@ -15,6 +15,8 @@ public interface UserMapper {
 
     List<BbsUser> getUserList(BbsUser user);
 
+    List<BbsUser> exportUserList();
+
     int countUser(BbsUser user);
 
 

@@ -6,6 +6,12 @@ server:
 spring:
   application:
     name: forum
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      profile: test
   session:
     store-type: HASH_MAP
   cache:
@@ -50,13 +56,17 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 5000
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream # 或者'*'
 eureka:
   client:
     service-url:
       defaultZone: http://eureka1:7211/eureka/,http://eureka2:7212/eureka/
 
-ribbon.eureka.enabled: false
-bbs-user.ribbon.listOfServers: http://localhost:7310
+ribbon.eureka.enabled: true
+bbs-user.ribbon.listOfServers: http://127.0.0.1:7310
 
 feign.hystrix.enabled: true

@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BBS 开源技术论坛</title>
+    <title>码道 开源技术论坛</title>
     <meta name="keywords" content="Beetl,BeetlSql">
-    <meta name="description" content="论坛模板">
+    <meta name="description" content="开源技术论坛">
     <link rel="shortcut icon" href="${ctxPath}/static/img/favicon.ico">
 <!-- 	<link href="${ctxPath}/css/bootstrap.min.css" rel="stylesheet"> -->
 	<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -15,29 +15,29 @@
 	<script src="${ctxPath}/js/echarts-all-3.js"></script>
     <style type="text/css">
     	.ani{-webkit-transition: all .3s ease-out;-ms-transition: all .3s ease-out;-moz-transition: all .3s ease-out;-o-transition: all .3s ease-out;transition: all .3s ease-out;}
-		.serach .form-control{border-color: #ffce3d;}
-		#serach-btn{border-color: #ffce3d;background: #f56a00;color: #fff;}
-		.serach .form-control:focus {border-color: #ffce3d;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);}
+		.serach .form-control{border-color: #0084ff;}
+		#serach-btn{border-color: #0084ff;background: #335fff;color: #fff;}
+		.serach .form-control:focus {border-color: #0084ff;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);}
     	body { padding-top: 70px;font-family: PingFang SC,Microsoft YaHei,sans-serif; background-color: #f9f9f9;}
     	.navbar-brand>svg{width: 24px;vertical-align: middle;fill:#000;}
-    	.mcount{background-color: orange;position: relative;top: -1px;}
+    	.mcount{background-color: #335fff;position: relative;top: -1px;}
 
-   		.navbar-default{background: #ffce3d;border-color:#fff;}
+   		.navbar-default{background: #0084ff;border-color:#fff;}
    		.navbar-default .navbar-brand , .navbar-default .navbar-nav>li>a{color: #000;}
    		.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{ color: #000;}
-   		.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {color: #000; background-color: #ffbf00;}
-		.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{ color: #000; background-color: #ffbf00;}
+   		.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {color: #000; background-color: #0080ff;}
+		.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{ color: #000; background-color: #0084ff;}
    		
    		#serach-btn:hover{cursor: pointer;}
    		
-   		.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {border-color: #f56a00;background-color: #ffce3d;}
-		.navbar-default .navbar-toggle {border-color: #f56a00;}
-   		.navbar-default .navbar-toggle .icon-bar {background-color: #f56a00;}
-   		.navbar-default .navbar-collapse, .navbar-default .navbar-form{border-color: #f56a00}
+   		.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {border-color: #335fff;background-color: #0084ff;}
+		.navbar-default .navbar-toggle {border-color: #335fff;}
+   		.navbar-default .navbar-toggle .icon-bar {background-color: #335fff;}
+   		.navbar-default .navbar-collapse, .navbar-default .navbar-form{border-color: #335fff}
 /*    		分页插件样式 */
    		.pagination>li>a, .pagination>li>span,.pagination>li>a:hover{color: #000;}
-		.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{background-color: #ffbf00;    border-color: #ffbf00;color: #fff;}
-    	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{color: #fff;background-color: #f56a00;border-color: #f56a00;}
+		.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{background-color: #0084ff;    border-color: #0084ff;color: #fff;}
+    	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{color: #fff;background-color: #335fff;border-color: #335fff;}
     	.pagination>li:first-child>a,.pagination>li:first-child>span, .pagination>li:last-child>a,  .pagination>li:last-child>span{border-radius: 0px}
    		
    		.author-panel{background: #fff;padding: 15px;overflow: hidden;}
@@ -67,7 +67,7 @@
       </button>
       <a class="navbar-brand" href="/bbs/bbs/index">
       <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1880"><path d="M832.299957 714.965621c-71.047126 88.067778-148.2126 70.077032-148.2126 70.077032 77.615729-65.686025 74.107835-233.597269 74.107835-233.597269 56.979736 6.564509 74.104765 93.439112 74.104765 93.439112 2.635013 53.857629 148.21567 93.439112 148.21567 93.439112C887.304711 721.78698 832.299957 714.965621 832.299957 714.965621zM513.173732 467.12086c0 0-26.707268-15.610536-21.554922-82.356706 0 0 43.672662-370.594433 237.145072-313.196165 0 0 128.243803 88.283696-21.580504 292.610314C707.182354 364.178303 570.780755 504.72634 513.173732 467.12086zM560.578392 504.72634c31.834033 103.172801-49.409316 210.239282-49.409316 210.239282-95.057983 32.713053-67.633377-56.756655-67.633377-56.756655 58.984393-61.013609 42.930765-130.125663 42.930765-130.125663C512.189312 506.013659 560.578392 504.72634 560.578392 504.72634zM214.740806 668.246577c0 0-15.826454-68.054979 9.243525-99.791797 0 0 19.540032 53.137221 64.86431 6.345522 0 0 13.948687-61.868069-50.226938-47.768957 0 0 21.086248-69.096704 66.274426-103.007025-82.760912-100.30652-238.370992-82.821287-238.370992-82.821287-51.842739-30.236652 0-46.715975 0-46.715975 135.454018-0.991584 222.324528 93.439112 222.324528 93.439112-23.989367-126.739543-148.21567-163.520237-148.21567-163.520237-39.818891-48.290843 17.485233-35.68371 17.485233-35.68371 126.141932 81.534991 149.874449 190.310394 154.345274 230.244918 20.531616-12.791327 45.414329-18.281365 75.196633-7.67889 0 0 156.796092 73.606415-24.702612 256.95935C362.956476 668.246577 246.483764 776.989233 214.740806 668.246577zM706.990996 513.219781c30.182416 116.948549-22.903639 201.74584-22.903639 201.74584-59.500139 125.21891-148.21567 46.719044-148.21567 46.719044 93.910856-94.708012 98.807377-256.95935 98.807377-256.95935C675.925467 502.981602 706.990996 513.219781 706.990996 513.219781z" p-id="1881"></path></svg>
-      开源技术论坛
+      码道技术论坛
       </a>
     </div>
 

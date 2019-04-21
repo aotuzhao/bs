@@ -11,8 +11,13 @@ spring:
         enabled: true
         service-id: config
       profile: test
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.magpie.bbs.user.model
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka1:7211/eureka/
-#,http://eureka2:7212/eureka/
+      defaultZone: http://eureka1:7211/eureka/,http://eureka2:7212/eureka/
+

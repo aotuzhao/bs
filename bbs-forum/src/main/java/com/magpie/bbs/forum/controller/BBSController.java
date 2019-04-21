@@ -1,5 +1,6 @@
 package com.magpie.bbs.forum.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.magpie.bbs.forum.ActionEnter;
 import com.magpie.bbs.forum.common.WebUtils;
@@ -721,7 +722,8 @@ public class BBSController {
         response.setHeader("Content-Disposition", "attachment;filename=" + new String("用户信息".getBytes("utf-8"), "ISO-8859-1") + ".xls");
         //编码
         response.setCharacterEncoding("ISO-8859-8");
-        List<BbsUser> list = userMapper.getUserList(new BbsUser());
+        List<BbsUser> list = userMapper.exportUserList();
+        System.out.println(JSON.toJSONString(list));
         Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams(), BbsUser.class, list);
         workbook.write(response.getOutputStream());
     }
