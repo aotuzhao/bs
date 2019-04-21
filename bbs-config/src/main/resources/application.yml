@@ -10,7 +10,7 @@ spring:
           uri: https://github.com/aotuzhao/bs-config
           username: zhao199606@gmail.com
           password: zhao520LKK
-          search-paths: config-dev
+          search-paths: config-test
           default-label: master
 eureka:
   client:

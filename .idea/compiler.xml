@@ -11,6 +11,7 @@
         <module name="bbs-eureka" />
         <module name="bbs-eureka-slave" />
         <module name="bbs-forum" />
+        <module name="bbs-hystrix-dashboard" />
         <module name="bbs-user" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
       <module name="bbs-eureka" target="1.8" />
       <module name="bbs-eureka-slave" target="1.8" />
       <module name="bbs-forum" target="1.8" />
+      <module name="bbs-hystrix-dashboard" target="1.8" />
       <module name="bbs-user" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -30,6 +32,7 @@
       <module name="bbs-eureka" options="-parameters" />
       <module name="bbs-eureka-slave" options="-parameters" />
       <module name="bbs-forum" options="-parameters" />
+      <module name="bbs-hystrix-dashboard" options="" />
       <module name="bbs-user" options="-parameters" />
     </option>
   </component>

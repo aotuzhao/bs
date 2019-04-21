@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/bbs-config/pom.xml" />
         <option value="$PROJECT_DIR$/bbs-eureka-slave/pom.xml" />
         <option value="$PROJECT_DIR$/bb-config-slave/pom.xml" />
+        <option value="$PROJECT_DIR$/bbs-hystrix-dashboard/pom.xml" />
       </list>
     </option>
   </component>

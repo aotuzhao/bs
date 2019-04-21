@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 /**
  *
- * @Description: feign熔断降价
+ * @Description: feign熔断降级
  * @date: 2019/4/16 21:32
  * @author：zhaoxuezhao
  */
