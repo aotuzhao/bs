@@ -20,11 +20,6 @@ public class ForumApplication {
     public static void main(String[] args) {
         SpringApplication.run(ForumApplication.class);
     }
-    @Bean
-    public ServletRegistrationBean hystrixMetricsStreamServlet() {
-        ServletRegistrationBean registration = new ServletRegistrationBean(new HystrixMetricsStreamServlet());
-        registration.addUrlMappings("/hystrix.stream");
-        return registration;
-    }
+
 
 }

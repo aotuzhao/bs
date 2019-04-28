@@ -13,6 +13,7 @@ import com.magpie.bbs.forum.es.vo.IndexObject;
 import com.magpie.bbs.forum.feign.FeignUserService;
 import com.magpie.bbs.forum.mapper.UserMapper;
 import com.magpie.bbs.forum.model.*;
+import com.magpie.bbs.forum.service.BBSModuleService;
 import com.magpie.bbs.forum.service.BBSService;
 import com.magpie.bbs.forum.service.BbsUserService;
 import org.apache.commons.lang3.StringUtils;
@@ -58,8 +59,6 @@ public class BBSController {
     @Autowired
     private CacheManager cacheManager;
 
-    @Autowired
-    private BbsUserService bbsUserService;
 
     @Autowired
     UserMapper userMapper;
@@ -723,7 +722,6 @@ public class BBSController {
         //编码
         response.setCharacterEncoding("ISO-8859-8");
         List<BbsUser> list = userMapper.exportUserList();
-        System.out.println(JSON.toJSONString(list));
         Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams(), BbsUser.class, list);
         workbook.write(response.getOutputStream());
     }
@@ -754,4 +752,6 @@ public class BBSController {
         view.addObject("list", list);
         return view;
     }
+
+
 }

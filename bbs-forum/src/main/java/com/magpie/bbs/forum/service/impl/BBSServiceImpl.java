@@ -239,11 +239,13 @@ public class BBSServiceImpl implements BBSService {
 		return postDao.getLatestPostDate(userId);
 	}
 
+	@Override
 	@CacheEvict(cacheNames = {"bbsTopic","bbsTopicPage","bbsHotTopicPage","bbsNiceTopicPage"}, allEntries=true)
 	public void updateTopic(BbsTopic topic){
 		sql.updateById(topic);
 	}
 	
+	@Override
 	@CacheEvict(cacheNames =  {"bbsPost","bbsPostPage","bbsFirstPost","bbsLatestPost"}, allEntries=true)
 	public void updatePost(BbsPost post) {
 		sql.updateById(post);

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Web相关工具类,同时用spring session，因此用户信息也放到session好cookie里
+ * Web相关工具类,同时用spring session，因此用户信息也放到session和cookie里
  * 
  */
 @Service
@@ -24,7 +24,7 @@ public  class WebUtils {
 
 	/**
 	 * 密码:md5hex
-	 * @param pwd
+	 * @param password
 	 * @return
 	 */
 	public static String pwdEncode(String password) {
@@ -108,8 +108,7 @@ public  class WebUtils {
 	 * 
 	 * cookie设计为: des(私钥).encode(userId~time~maxAge~password~ip)
 	 * 
-	 * @param Controller 控制器
-	 * @param GitUserModel  用户model
+	 * @param user  用户model
 	 * @param remember   是否记住密码、此参数控制cookie的 maxAge，默认为-1（只在当前会话）<br>
 	 *                   记住密码默认为30天
 	 * @return void
@@ -148,7 +147,7 @@ public  class WebUtils {
 
 	/**
 	 * 退出即删除用户信息
-	 * @param Controller
+	 * @param request
 	 * @return void
 	 */
 	public static void logoutUser(HttpServletRequest request,HttpServletResponse response) {
@@ -204,7 +203,7 @@ public  class WebUtils {
 
 	/**
 	 * 获取浏览器信息
-	 * @param HttpServletRequest
+	 * @param request
 	 * @return String
 	 */
 	public static String getUserAgent(HttpServletRequest request) {

@@ -1,11 +1,11 @@
 queryTopic
 ===
 	select  
-	@pageTag(){
-	t.*,m.name module_name,u.user_name user_name
-	@}  
-	FROM  bbs_topic t left join bbs_module m
-	on t.module_id = m.id  left join bbs_user u on t.user_id=u.id
+    @pageTag(){
+    t.*,m.name module_name,u.user_name user_name
+    @}  
+    FROM  bbs_topic t left join bbs_module m
+    on t.module_id = m.id  left join bbs_user u on t.user_id=u.id
     where true
      @var type = type!"normal";
      @if(!isEmpty(moduleId)){
@@ -28,13 +28,13 @@ queryMyMessageTopic
 ===
 
 	SELECT t.* FROM bbs_message  m left join bbs_topic t
-	on m.topic_id= t.id where m.user_id=#userId# and status = 1
+    on m.topic_id= t.id where m.user_id=#userId# and status = 1
 	
 queryMyMessageTopicCount
 ===
 
 	SELECT  count(1) from bbs_message  m 
-	where m.user_id=#userId# and status = 1
+    where m.user_id=#userId# and status = 1
 
 queryHotTopic
 ===
@@ -66,10 +66,10 @@ getParticipantUserId
 * 查询某个帖子的参与恩，包含post和reply俩种，用于群发通知
 
 	select user_id from bbs_post where topic_id = #topicId#
-
-	union 
-
-	select  user_id from bbs_post where topic_id= #topicId#
+    
+    union
+    
+    select user_id from bbs_post where topic_id= #topicId#
 
 getTopic
 ===
@@ -77,10 +77,10 @@ getTopic
 *查询主题帖
 	
 	SELECT * FROM bbs_topic WHERE id= #topicId#
-	
- 	@orm.single({"userId":"id"},"BbsUser",{"alias":"user"});
- 	
- 	@orm.single({"moduleId":"id"},"BbsModule",{"alias":"module"});
+    
+    @orm.single({"userId":"id"},"BbsUser",{"alias":"user"});
+    
+    @orm.single({"moduleId":"id"},"BbsModule",{"alias":"module"});
 
 
 

@@ -10,7 +10,7 @@
 
     <!-- 统计用户列表-->
     <select id="countUser" parameterType="com.magpie.bbs.user.model.BbsUser" resultType="int">
-        select count(1) from (<include refid="getUserListSql" />) count
+        select value(1) from (<include refid="getUserListSql" />) value
     </select>
 
     <!-- 修改用户信息-->

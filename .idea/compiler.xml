@@ -11,7 +11,6 @@
         <module name="bbs-eureka" />
         <module name="bbs-eureka-slave" />
         <module name="bbs-forum" />
-        <module name="bbs-hystrix-dashboard" />
         <module name="bbs-user" />
       </profile>
     </annotationProcessing>
