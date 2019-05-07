@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="bb-config-slave" />
-        <module name="bbs-config" />
-        <module name="bbs-eureka" />
-        <module name="bbs-eureka-slave" />
-        <module name="bbs-forum" />
         <module name="bbs-user" />
+        <module name="bbs-zuul" />
+        <module name="bbs-config" />
+        <module name="bb-config-slave" />
+        <module name="bbs-eureka" />
+        <module name="bbs-forum" />
+        <module name="bbs-forum-slave" />
+        <module name="bbs-eureka-slave" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,8 +22,10 @@
       <module name="bbs-eureka" target="1.8" />
       <module name="bbs-eureka-slave" target="1.8" />
       <module name="bbs-forum" target="1.8" />
+      <module name="bbs-forum-slave" target="1.8" />
       <module name="bbs-hystrix-dashboard" target="1.8" />
       <module name="bbs-user" target="1.8" />
+      <module name="bbs-zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -31,8 +35,10 @@
       <module name="bbs-eureka" options="-parameters" />
       <module name="bbs-eureka-slave" options="-parameters" />
       <module name="bbs-forum" options="-parameters" />
+      <module name="bbs-forum-slave" options="-parameters" />
       <module name="bbs-hystrix-dashboard" options="" />
       <module name="bbs-user" options="-parameters" />
+      <module name="bbs-zuul" options="" />
     </option>
   </component>
 </project>

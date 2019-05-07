@@ -1,0 +1,72 @@
+server:
+  port: 7209
+  servlet:
+    context-path: /bbs
+
+spring:
+  application:
+    name: forum
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      profile: test
+  session:
+    store-type: HASH_MAP
+  cache:
+    type: Ehcache
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.135.128:9300
+
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 1000MB
+
+
+elasticsearch:
+  bbs:
+    content:
+      url: http://192.168.135.128:9200/bbs/content/_search
+
+beetl:
+  suffix: html
+beetl-beetlsql:
+  dev: true
+beetlsql:
+  basePackage: com.magpie.bbs.forum.dao
+
+web:
+  upload-path: /application/opt/upload/
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.magpie.bbs.forum.model
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream # 或者'*'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:7211/eureka/,http://eureka2:7212/eureka/
+
+ribbon.eureka.enabled: true
+bbs-user.ribbon.listOfServers: http://127.0.0.1:7310
+
+feign.hystrix.enabled: true

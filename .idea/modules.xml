@@ -7,7 +7,9 @@
       <module fileurl="file://$PROJECT_DIR$/bbs-eureka/bbs-eureka.iml" filepath="$PROJECT_DIR$/bbs-eureka/bbs-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbs-eureka-slave/bbs-eureka-slave.iml" filepath="$PROJECT_DIR$/bbs-eureka-slave/bbs-eureka-slave.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbs-forum/bbs-forum.iml" filepath="$PROJECT_DIR$/bbs-forum/bbs-forum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-forum-slave/bbs-forum-slave.iml" filepath="$PROJECT_DIR$/bbs-forum-slave/bbs-forum-slave.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbs-user/bbs-user.iml" filepath="$PROJECT_DIR$/bbs-user/bbs-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-zuul/bbs-zuul.iml" filepath="$PROJECT_DIR$/bbs-zuul/bbs-zuul.iml" />
     </modules>
   </component>
 </project>

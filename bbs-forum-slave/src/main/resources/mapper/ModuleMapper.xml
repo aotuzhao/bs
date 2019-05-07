@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.magpie.bbs.forum.mapper.ModuleMapper">
+    <insert id="addModule" parameterType="com.magpie.bbs.forum.model.BbsModule">
+        insert into bbs_module(name,detail,turn) values(#{name},#{detail},#{turn})
+    </insert>
+    <update id="updateModule"  parameterType="com.magpie.bbs.forum.model.BbsModule">
+        update bbs_module
+        set  turn = #{turn}
+        where id = #{id}
+    </update>
+
+    <!-- 获取模块列表-->
+
+    <select id="getModuleList" parameterType="com.magpie.bbs.forum.model.BbsModule"
+            resultType="com.magpie.bbs.forum.model.BbsModule">
+         select *
+         from bbs_module
+         LIMIT ${currentPage}, ${pageSize}
+    </select>
+    <select id="countModule" resultType="java.lang.Integer">
+        select count(1) from bbs_module
+    </select>
+    <select id="getModule" parameterType="java.lang.Integer" resultType="com.magpie.bbs.forum.model.BbsModule">
+        select * from bbs_module where id=#{id}
+    </select>
+    <select id="getModuleCount" resultType="com.magpie.bbs.forum.model.ModuleCountDTO">
+        SELECT
+            module.name,
+            count(1) value
+        FROM
+            bbs_module module
+        LEFT JOIN bbs_topic topic ON module.id = topic.module_id
+        GROUP BY
+            module.name
+    </select>
+    <select id="getAllModule" resultType="com.magpie.bbs.forum.model.BbsModule">
+        select *
+        from bbs_module
+    </select>
+
+
+</mapper>

@@ -1,0 +1,177 @@
+@layout("/common/layout.html"){
+<div style="margin-top: 100px;">
+    <table class="table table-bordered">
+        <tr>
+            <td><a href="#" onclick="window.open('${ctxPath}/bbs/downloadModule');" data-toggle="modal">
+                <input type="button"   class="btn btn-sm btn-primary " value="导出Excel"/>
+            </a>&nbsp;
+                <a href="#module-dialog" data-toggle="modal">
+                    <input type="button"  class="btn btn-sm btn-primary " value="新增版块"/>
+                </a>
+            </td>
+
+
+        </tr>
+    </table>
+
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>模块名称</th>
+            <th>模块详情</th>
+            <th>优先级</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="tbody2">
+        </tbody>
+    </table>
+    <div class="zxf_pagediv"></div>
+</div>
+<div id="moduleCount" style="width: 800px;height:600px;margin-top: 200px;"></div>
+<div class="modal fade" id="module-dialog" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="${ctxPath}/bbs/addModule" onsubmit="return moduleSubmit(this,'reload')">
+                    <div class="form-group">
+                        <label>模块名</label>
+                        <input type="text" placeholder="请输入模块名" name="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>简介</label>
+                        <input type="text" placeholder="不可变更" name="detail" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>优先级</label>
+                        <input type="number" placeholder="数字越大优先级越低" name="turn" class="form-control">
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">提 交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="pageNum" value="1"/>
+<input type="hidden" id="current" value="1"/>
+<input type="hidden" id="pageSize" value="10"/>
+<script>
+    function moduleSubmit(form, reload) {
+        form = $(form);
+        $.post(form.attr('action'), form.serialize(), function (json) {
+            location.reload();
+        });
+        return false;
+    }
+
+    $(function () {
+        $.ajaxSettings.async = false;
+        loadModuleList();
+        $.ajaxSettings.async = true;
+        page();
+        loadModuleEcharts();
+    });
+
+    function page() {
+        //翻页
+        $(".zxf_pagediv").createPage({
+            pageNum: $("#pageNum").val(),
+            current: $("#current").val(),
+            backfun: function (e) {
+                if (!isNaN(e.current)) {
+                    $("#current").val(e.current);
+                    loadModuleList();
+                }
+            }
+        });
+    }
+
+    function updateModule(id, num) {
+        var param = {
+            "id": id,
+            "turn": num
+        };
+        $.post('${ctxPath}/bbs/updateModule', param, function (data) {
+
+            if (data <= 0) {
+                alert("修改失败!");
+            }
+
+            loadModuleList();
+        });
+    }
+
+
+    function loadModuleList() {
+        var param = {
+            currentPage: $("#current").val(),
+            pageSize: $("#pageSize").val()
+        };
+        $.post('${ctxPath}/bbs/getModuleList', param, function (data1) {
+            var json = "";
+            if (null != data1) {
+                var data = data1.data;
+                if (null != data) {
+                    for (var i = 0; i < data.length; i++) {
+                        json += '<tr>';
+                        json += '<td>' + data[i].name + '</td>';
+                        json += '<td>' + data[i].detail + '</td>';
+                        json += '<td>' + data[i].turn + '</td>';
+                        json += '<td><a href="javascript:;" onclick="updateModule(' + data[i].id + ',1)">升级</a>&nbsp;&nbsp;';
+                        json += '<a href="javascript:;" onclick="updateModule(' + data[i].id + ',-1)">降级</a></td>';
+                        json += '</tr>';
+                    }
+
+                    $("#pageNum").val(data1.pageNum);
+                }
+            }
+            $("#tbody2").html(json);
+        });
+    }
+
+
+    function loadModuleEcharts() {
+        $.post('${ctxPath}/bbs/getModuleCount', function (data1) {
+
+            var myChartModule = echarts.init(document.getElementById('moduleCount'));
+
+            var option1 = {
+                title: {
+                    text: '论坛模块统计',
+                    x: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: data1.names
+                },
+                series: [
+                    {
+                        name: '主题统计',
+                        type: 'pie',
+                        radius: '75%',
+                        center: ['50%', '60%'],
+                        data: data1.datas,
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChartModule.setOption(option1);
+        });
+        // 基于准备好的dom，初始化echarts实例
+
+    }
+</script>
+@}
