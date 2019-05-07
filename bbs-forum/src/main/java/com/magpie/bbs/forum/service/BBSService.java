@@ -44,7 +44,7 @@ public interface BBSService {
 
 	void deleteTopic(int id);
 
-	void deletePost(int id);
+	void deletePost(int id, BbsPost post);
 	
 	void deleteReplay(int id);
 	

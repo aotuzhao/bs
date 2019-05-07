@@ -15,7 +15,6 @@ public class BbsTopic  extends TailBean implements Serializable{
 	private static final long serialVersionUID = -2086183299152059973L;
 	
 	private Integer id ;
-	private Integer emotion ;
 	private Integer isNice ;
 	private Integer isUp ;
 	private Integer moduleId ;
@@ -36,13 +35,6 @@ public class BbsTopic  extends TailBean implements Serializable{
 		this.id = id;
 	}
 
-	public Integer getEmotion() {
-		return emotion;
-	}
-
-	public void setEmotion(Integer emotion) {
-		this.emotion = emotion;
-	}
 
 	public Integer getIsNice() {
 		return isNice;

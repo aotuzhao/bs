@@ -97,7 +97,7 @@
 				<li><a href="#login-dialog" data-toggle="modal"><i class="fa fa-sign-in"></i> 登录</a></li>
 				<li><a href="#reg-dialog" data-toggle="modal"><i class="fa fa-user-plus"></i> 注册</a></li>
 				@}else{
-				<li><a href="/bbs/bbs/topic/add.html"><i class="fa fa-plus"></i> 发帖</a></li>
+				<li><a href="/bbs/bbs/topic/add.html"><i class="fa fa-plus"></i> 创建话题</a></li>
 				<li class="dropdown">
 					@ var mcount = c.myMessageCount(_user.id);
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user-circle-o"></i> ${_user.userName} ${mcount > 0?'<span class="badge mcount">'+mcount+'</span> '}<span class="caret"></span></a>
@@ -234,21 +234,7 @@
 <script type="text/javascript" charset="utf-8" src="${ctxPath}/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript">
 	UE.getEditor('postContent');
-	// var editor = new Simditor({
-	//     textarea: $('#postContent'),
-	//     defaultImage:'http://ibeetl.com/img/logo.png',
-	//     pasteImage:true,
-	//     cleanPaste:true,
-	//     toolbar:['title','bold','italic','underline','strikethrough','fontScale','color','ol','ul','blockquote','code','table','link','image','hr','indent','outdent','alignment','|','markdown'],
-	//     //按Beetl论坛的用处来看，暂时只需要如下几个语言（HTML、XML、json、java、javascript、markdown、sql）,如有需要再扩展
-	//     codeLanguages:[{name:'HTML,XML',value:'html'},{name:'JSON',value:'json'},{name:'Java',value:'java'},{name:'JavaScript',value:'js'},{name:'Markdown',value:'markdown'},{name:'SQL',value:'sql'}],
-	//     upload:{
-	//         url: '${ctxPath}/bbs/upload',
-	//         fileKey: 'editormd-image-file',
-	//         connectionCount: 3,
-	//         leaveConfirm: '上传正在进行中，确定要离开当前页面吗？'
-	//     }
-	// });
+
 	function preview(){
 		var preWin = window.open('about:blank','preview');
 		preWin.document.write('<meta name="google" value="notranslate"><link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"><style>.panel img{max-width:100% !important;heightLauto !important;}.panel{margin-top:20px;}</style>');

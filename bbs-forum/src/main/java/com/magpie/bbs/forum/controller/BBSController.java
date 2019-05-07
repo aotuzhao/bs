@@ -275,6 +275,7 @@ public class BBSController {
             post.setHasReply(0);
             topic.setContent(title);
             post.setContent(postContent);
+            post.setUpdateTime(new Date());
             bbsService.saveTopic(topic, post, user);
 
             result.put("err", 0);
@@ -296,6 +297,7 @@ public class BBSController {
         } else {
             post.setHasReply(0);
             post.setCreateTime(new Date());
+            post.setUpdateTime(new Date());
             BbsUser user = webUtils.currentUser(request, response);
             bbsService.savePost(post, user);
             BbsTopic topic = bbsService.getTopic(post.getTopicId());
@@ -541,11 +543,11 @@ public class BBSController {
     public JSONObject deletePost(ModelAndView view, @PathVariable int id, HttpServletRequest request, HttpServletResponse response) {
         JSONObject result = new JSONObject();
         BbsPost post = sql.unique(BbsPost.class, id);
-        if (canUpdatePost(post, request, response)) {
-            bbsService.deletePost(id);
+        if(canUpdatePost(post,request,response)){
+            bbsService.deletePost(id, post);
             result.put("err", 0);
             result.put("msg", "删除成功！");
-        } else {
+        }else{
             result.put("err", 1);
             result.put("msg", "不是自己发表的内容无法删除！");
         }

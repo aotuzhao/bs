@@ -218,7 +218,19 @@ public class BBSServiceImpl implements BBSService {
 			@CacheEvict(cacheNames = {"bbsPost","bbsPostPage","bbsFirstPost","bbsLatestPost"}, allEntries=true),
 			@CacheEvict(cacheNames = {"bbsReply"}, allEntries=true)
 	})
-	public void deletePost(int id) {
+	public void deletePost(int id, BbsPost post) {
+		if (null != post) {
+			int topicId = post.getTopicId();
+			BbsTopic topic = sql.unique(BbsTopic.class, topicId);
+			if (topic != null) {
+				int count = topic.getPostCount();
+				if (count > 0) {
+					count--;
+				}
+				topic.setPostCount(count);
+				sql.updateById(topic);
+			}
+		}
 		sql.deleteById(BbsPost.class, id);
 		replyDao.deleteByPostId(id);
 	}

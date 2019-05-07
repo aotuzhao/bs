@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 1101
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:7211/eureka/,http://eureka2:7212/eureka/
+zuul:
+  routes:
+    # 自定义规则名
+    bbs-api:
+      # url地址
+      path: /bbs/**
+      # 要路由到哪个服务 -- 对应于具体服务的 spring.application.name
+      serviceId: forum
