@@ -272,7 +272,6 @@ public class BBSController {
             topic.setPv(1);
             topic.setPostCount(1);
             topic.setReplyCount(0);
-            post.setHasReply(0);
             topic.setContent(title);
             post.setContent(postContent);
             post.setUpdateTime(new Date());
@@ -295,7 +294,6 @@ public class BBSController {
         if (post.getContent().length() < 5) {
             result.put("msg", "内容太短，请重新编辑！");
         } else {
-            post.setHasReply(0);
             post.setCreateTime(new Date());
             post.setUpdateTime(new Date());
             BbsUser user = webUtils.currentUser(request, response);
@@ -517,6 +515,7 @@ public class BBSController {
             BbsPost db = sql.unique(BbsPost.class, post.getId());
             if (canUpdatePost(db, request, response)) {
                 db.setContent(post.getContent());
+                db.setUpdateTime(new Date());
                 bbsService.updatePost(db);
                 result.put("id", post.getId());
                 result.put("msg", "/bbs/topic/" + db.getTopicId() + "-1.html");
@@ -686,16 +685,22 @@ public class BBSController {
         result.put("err", 1);
         BbsUser user = webUtils.currentUser(request, response);
         BbsPost post = bbsService.getPost(postId);
-        if (user == null || post == null || !webUtils.isAdmin(request, response) || !user.getId().equals(post.getUserId())) {
-            result.put("err", 1);
-            result.put("msg", "无法操作");
-        } else {
+        if(user!=null&&post !=null){
+            BbsTopic topic = bbsService.getTopic(post.getTopicId());
+            if(webUtils.isAdmin(request, response)||user.getId().equals(topic.getUserId())){
+                post.setIsAccept((post.getIsAccept() == null || post.getIsAccept() == 0) ? 1 : 0);
+                result.put("data", post.getIsAccept());
+                bbsService.updatePost(post);
+                result.put("err", 0);
+                result.put("id", post.getId());
+            }else {
+                result.put("err", 1);
+                result.put("msg", "无法操作");
+            }
 
-            post.setIsAccept((post.getIsAccept() == null || post.getIsAccept() == 0) ? 1 : 0);
-            result.put("data", post.getIsAccept());
-            bbsService.updatePost(post);
-            result.put("err", 0);
-            result.put("id", post.getId());
+        }else{
+            result.put("err", 1);
+            result.put("msg", "请登录！");
         }
         return result;
     }

@@ -243,7 +243,7 @@ public  class WebUtils {
 		if(user==null){
 			throw new RuntimeException("未登陆用户");
 		}
-		return user.getUserName().equals("admin");
+		return user.getUserName().equalsIgnoreCase("admin");
 			
 	}
 

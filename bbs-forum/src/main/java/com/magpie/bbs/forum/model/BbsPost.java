@@ -16,7 +16,7 @@ public class BbsPost  extends TailBean implements Serializable{
 	private static final long serialVersionUID = 2365496820528154205L;
 	
 	private Integer id ;
-	private Integer hasReply ;
+
 	private Integer topicId ;
 	private Integer userId ;
 	private String content ;
@@ -38,13 +38,6 @@ public class BbsPost  extends TailBean implements Serializable{
 		this.id = id;
 	}
 
-	public Integer getHasReply() {
-		return hasReply;
-	}
-
-	public void setHasReply(Integer hasReply) {
-		this.hasReply = hasReply;
-	}
 
 	public Integer getTopicId() {
 		return topicId;

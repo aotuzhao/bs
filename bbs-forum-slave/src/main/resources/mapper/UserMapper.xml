@@ -10,7 +10,7 @@
 
     <!-- 统计用户列表-->
     <select id="countUser" parameterType="com.magpie.bbs.forum.model.BbsUser" resultType="int">
-        select value(1) from (<include refid="getUserListSql" />) value
+        select count(1) from (<include refid="getUserListSql" />) count
     </select>
     <select id="exportUserList" resultType="com.magpie.bbs.forum.model.BbsUser">
         SELECT
@@ -19,6 +19,7 @@
                 WHEN 0 THEN '女'
                 ELSE '男'
           END sexName,
+        score,
         email,
         level,
         balance,

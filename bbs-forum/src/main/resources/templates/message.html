@@ -33,7 +33,7 @@
 	                  
 					<td class="text-left mail-date">
 						<div class="btn-group" id="admin">
-							<a href="javascript:;"  class="btn btn-default btn-xs read-btn">已读</a>
+							<a href="${ctxPath}/bbs/my/${topic.id}.html"  class="btn btn-default btn-xs read-btn">已读</a>
 						</div>
 					</td>
 					
@@ -43,9 +43,9 @@
 	       </table>
 	       
        </div>
-       <script>
-       $('#post-list').on('click','.read-btn',function(){
-    	 		alert(1);
-       })
-       </script>
+<!--       <script>-->
+<!--       $('#post-list').on('click','.read-btn',function(){-->
+<!--		   $.post()-->
+<!--	   })-->
+<!--       </script>-->
 @}    
