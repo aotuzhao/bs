@@ -425,7 +425,7 @@ public class BBSController {
         if (!webUtils.isAdmin(request, response)) {
             //如果有非法使用，不提示具体信息，直接返回null
             result.put("err", 1);
-            result.put("msg", "呵呵~~");
+            result.put("msg", "操作失败，请稍后重试");
         } else {
             BbsTopic db = bbsService.getTopic(id);
             Integer nice = db.getIsNice();
@@ -615,7 +615,7 @@ public class BBSController {
         if (!webUtils.isAdmin(request, response)) {
             //如果有非法使用，不提示具体信息，直接返回null
             result.put("err", 1);
-            result.put("msg", "呵呵~~");
+            result.put("msg", "操作失败，请稍后重试");
         } else {
             esService.initIndex();
             result.put("err", 0);
